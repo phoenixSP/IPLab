@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Registration Form</title>
+</head>
+<body>
+
+
+
+<form>
+  Name:<input type="text" name="firstname" required=""><br><br>
+  Father's name:<input type="text" name="fathername" required=""><br><br>
+  Roll No: <input type="text" name="roll" required=""><br><br>
+
+  Adresses: <input type="radio" id="id1" name="address" value="postal" onclick="show();hide2();" required="">Postal
+  <input type="radio" id="id2" name="address" value="permanent" onclick="show2();hide();" required=""> Permanent<br>
+
+  <TEXTAREA id="area" style="display: none;" NAME="data" ROWS=10 COLS=50></TEXTAREA>
+  <TEXTAREA id="area2" style="display: none;" NAME="data" ROWS=10 COLS=50></TEXTAREA>
+
+  Gender:<input type="radio" name="gender" value="male"> Male
+  <input type="radio" name="gender" value="female"> Female
+  <input type="radio" name="gender" value="other"> Other<br><br>
+
+  State:<select name="state" id="state" onchange = "showHideDistrict()">
+  <option value="ap">Andhra Pradesh</option>
+  <option value="mh">Maharashtra</option>
+  <option value="mp">Madhya Pradesh</option>
+  <option value="wb">West Bengal</option>
+  </select>
+  <br><br>
+
+  <div id="div1" style="display: none">
+  Andhra Pradesh District:<select name="ap">
+    <option value="ap1">ap1</option>
+    <option value="ap2">ap2</option>
+    <option value="ap3">ap3</option>
+    <option value="ap4">ap4</option>
+    </select><br><br>
+  </div>
+
+  <div id="div2" style="display: none">
+  Maharashtra District:<select name="mh">
+    <option value="mh1">mh1</option>
+    <option value="mh2">mh2</option>
+    <option value="mh3">mh3</option>
+    <option value="mh4">mh4</option>
+    </select><br><br>
+  </div>
+
+  <div id="div3" style="display: none">
+  Madhya Pradesh District:<select name="mp">
+    <option value="mp1">mp1</option>
+    <option value="mp2">mp2</option>
+    <option value="mp3">mp3</option>
+    <option value="mp4">mp4</option>
+    </select><br><br>
+  </div>
+
+  <div id="div4" style="display: none">
+  West Bengal District:<select name="wb">
+    <option value="wb1">wb1</option>
+    <option value="wb2">wb2</option>
+    <option value="wb3">wb3</option>
+    <option value="wb4">wb4</option>
+    </select><br><br>
+  </div>
+
+
+  Course:<select name="course">
+  <option value="EE">Electrical Engineering</option>
+  <option value="CSE">Computer Science & Engineering</option>
+  <option value="ECE">Electronics and Communication Engineering</option>
+  <option value="ME">Mechanical Engineering</option>
+  </select>
+  <br><br>
+
+  Mobile Number:<input type="text" name="mobile" pattern="[0-9]{10}" maxlength="10" title="Mobile number should contain only 10 numbers"><br><br>
+  Email:<input type="email" placeholder="Enter your email"><br><br>
+
+  <input type="submit" value="Submit">
+  <input type="submit" value="Reset">
+
+</form> 
+
+<script>
+
+function show() { document.getElementById('area').style.display = 'block'; }
+function hide() { document.getElementById('area').style.display = 'none'; }
+function show2() { document.getElementById('area2').style.display = 'block'; }
+function hide2() { document.getElementById('area2').style.display = 'none'; }
+function showHideDistrict()
+{
+  var st=document.getElementById("state");
+  var dis1=document.getElementById("div1");
+  var dis2=document.getElementById("div2");
+  var dis3=document.getElementById("div3");
+  var dis4=document.getElementById("div4");
+
+  if(st.value == "ap")
+  {
+  	dis1.style.display ="block";
+        dis2.style.display ="none";
+        dis3.style.display ="none";
+	dis4.style.display ="none";
+
+  }
+  else if(st.value == "mh")
+  {
+  	dis1.style.display ="none";
+        dis2.style.display ="block";
+        dis3.style.display ="none";
+	dis4.style.display ="none";
+  }
+  else if(st.value == "mp")
+  {
+  	dis1.style.display ="none";
+        dis2.style.display ="none";
+        dis3.style.display ="block";
+	dis4.style.display ="none";
+  }
+  else
+  {
+  	dis1.style.display ="none";
+        dis2.style.display ="none";
+        dis3.style.display ="none";
+	dis4.style.display ="block";
+  }
+}
+
+</script>
+
+</body>
+</html>
